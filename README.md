@@ -43,6 +43,67 @@
     <li>Google Materialize CSS</li>
     <li>Full Documentation</li>
 </ol>
+<br>
+<h2>SQL Query Example </h2>
+<ol>
+<li>
+<h5>SQL to select all </h5>
+<code>$rows = $this->hts->HTSselect("table_name");</code>
+
+<code>
+<br>
+foreach($rows as $row){<br>
+.....<br>
+}
+</code>
+</li>
+
+<li>
+<h5>SQL to select all with ORDER BY and LIMIT </h5>
+<code>$this->hts->HTSselect("table_name ORDER BY post_id DESC LIMIT 10");</code>
+</li>
+
+<li>
+<h5>SQL to SELECT with WHERE</h5>
+<code>$bind = array(":id" =>$id);</code><br>
+<code>$this->hts->HTSselect("table_name WHERE id=:id",$bind);</code>
+</li>
+
+<li>
+<h5>SQL to SELECT only one record</h5>
+<code>$bind = array(":id" =>$id);</code><br>
+<code>$this->hts->HTSselect("table_name WHERE id=:id",$bind,1);</code>
+</li>
+
+<li>
+<h5>SQL to DELETE record</h5>
+<code>$bind = array(":id" =>$id);</code><br>
+<code>$this->hts->Hdelete('table_name',"id=:id",$bind);</code>
+</li>
+
+<li>
+<h5>SQL to INSERT record</h5>
+<code>$values = array(array('name' => $name, 'email' => $email));</code><br>
+<code>$this->hts->Hinsert('table_name', $values);</code>
+</li>
+
+<li>
+<h5>SQL to UPDATE record</h5>
+<code>$where = array('id' => $id);</code><br>
+<code>$values = array('name' => $name, 'email' => $email);</code><br>
+<code>$this->hts->HTSupdate('table_name',$values,$where);</code>
+</li>
+
+<li>
+<h5>SQL to to JOIN TABLES Example</h5>
+<code> $this->hts->HTSselect("SELECT `categories`.`name` , `posts`.*, `table_name`.*<br>
+FROM `table_name`<br>
+RIGHT JOIN `posts`<br>
+ON (`table_name`.`postid` = `posts`.`post_id`)<br>
+LEFT JOIN `categories`<br>
+ON (`posts`.`catid` = `categories`.`catid`)",$bind);</code><br>
+</li>
+</ol>
 
 <br>
 <h2> DEMO</h2>
