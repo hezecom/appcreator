@@ -1,3 +1,4 @@
+<h2>Hezecom PHP AppCreator with Materialized CSS Sample Code</h2>
 <p>Hezecom PHP AppCreator with Materialized CSS is a powerful tool to increase web development productivity, saves alot of time and increase your profit. Instant codes and report generation (PDF, CSV, JSON and EXCEL) with awesome responsive admin panel using Google Materialize CSS Framework, Twig engine and Slim framework.<br><br>This software has CMS ready to use and  a PHP base code generator that generates the entire module for your application base on your database. All you need to do is just create your database and the Code Generator will do everything with just a single click.
 </p>
 
@@ -55,6 +56,7 @@ http://appcreator.hezecom.com/AppCreator/CodeOutput
 <h2>Requirement</h2>
 <ul>
 <li>PHP 7.0 or newer</li>
+<li>Slim Framework 3</li>
 <li>MySQL 5+</li>
 <li>PDO Driver Enabled</li>
 <li>GD PHP Extension </li>
