@@ -5,7 +5,7 @@
 
 <p><img src="http://appcreator.hezecom.com/images/page.png"></p>
 <p><a href="http://appcreator.hezecom.com"><img src="http://appcreator.hezecom.com/images/demo.png"></a></p>
-<p><a href="#"><img src="http://appcreator.hezecom.com/images/download.png"></a></p>
+<p><a href="https://github.com/hezecom/appcreator/archive/master.zip"><img src="http://appcreator.hezecom.com/images/download.png"></a></p>
 <p>
 <h4>Details Features</h4>
 <ol>
