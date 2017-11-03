@@ -1,0 +1,51 @@
+<?php
+	$etype=$printer;
+	$excel='
+	<p style="font-family:arial; font-size:18px;" align="left">
+	<strong style="font-family:arial;">'.$this->lang['LANG_REPORT_TITLE'].'</strong><br>'.$this->lang['LANG_REPORT_SUB_TITLE'].'<br>
+	<strong>'.$this->lang['HTS_USERS'].'</strong> People</p>';
+	$excel.='<table border="1" cellspacing="0" width="100%" style="font-family:arial; font-size:14px;" cellpadding="5">
+	<tr>
+      <th>'.$this->lang['PEOP_NAME'].'</th>
+      <th>'.$this->lang['PEOP_GENDER'].'</th>
+      <th>'.$this->lang['PEOP_DATE_REGISTERED'].'</th>
+      <th>'.$this->lang['PEOP_PICTURE'].'</th>
+      <th>'.$this->lang['PEOP_OTHERS'].'</th>
+  </tr>
+  ';
+	foreach($result as $rows)
+			{
+	$excel.='<tr>
+	<td>'.$rows->name.'</td>
+	<td>'.$rows->gender.'</td>
+	<td>'.$rows->date_registered.'</td>
+	<td>'.$rows->picture.'</td>
+	<td>'.$rows->others.'</td>
+	</tr>';
+	}
+	$excel.='</table>';
+	$filename1= 'people_'.date('Y-m-d').'.doc';
+	$filename2= 'people_'.date('Y-m-d').'.xls';
+	$pdf_output= 'people_'.date('Y-m-d').'.pdf';
+	if ($etype == 'word') 
+    {
+        MSWord($filename1);
+        print $excel;
+    }
+    elseif ($etype == 'excel') 
+    {
+        MSExcell($filename2);
+        print $excel;
+    }
+    elseif ($etype == 'printer') 
+    {
+        HTSPrint();
+        print $excel;
+    }
+    elseif ($etype == 'pdf') 
+    {
+        HezecomPPDF($pdf_output,$excel);
+        print $excel;
+    }
+    
+	?>

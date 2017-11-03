@@ -1,0 +1,84 @@
+{% extends 'admin/views/layout.html' %}
+{% block content %}
+
+<main class="hts-body app-section">
+    <div class="row">
+        <div class="col s12 hide-on-small-only">
+            <nav class="white lighten-1">
+                <div class="nav-wrapper">
+                    <div class="left col s12 m5 l5">
+                        <ul>
+                            <li><a href="{{ page.viewURL }}"><i class="material-icons blue-grey-text">menu</i></a></li>
+                            <li class="blue-grey-text caption">{{lang.HTS_DETAILS}}</li>
+                        </ul>
+                    </div>
+                    <div class="col s12 m7 l7">
+                        <ul class="right">
+                            <li><a href="{{ page.addURL }}"><i class="material-icons grey-text hts-32">add</i></a></li>
+                            <li><a href="{{page.updateURL}}"><i class="material-icons grey-text hts-32">edit</i></a></li>
+                            <li><a href="{{page.deleteURL}}?id={{row.id}}" id="confirmDelete"><i class="material-icons grey-text hts-32">delete</i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+        <div class="col s12 app-inner">
+            <div id="appList" class="col s12 m4 l4 card-panel z-depth-1 hide-on-small-only">
+                <ul class="collection">
+                    {% for list in lists %}
+                    <li class="collection-item avatar">
+                        <a href="{{ base_url() }}/admin/people/details/{{list.id}}">
+                            <span class="circle blue-grey">{{list.name | slice(0, 1)}}</span>
+                            <span class="list-title">{{list.name}}</span>
+                            <p class="truncate grey-text">short text</p>
+                        </a>
+                        <a class="secondary-content listCap"><span class="blue-text">12:10 am</span></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div id="appDetails" class="col s12 m8 l8 card-panel">
+                <ul class="collection">
+                    <li class="collection-item no-padding">
+                        <span class="grey-text">{{lang.PEOP_NAME}}</span>
+                        <p class="listmg">{{row.name}}</p>
+                    </li>
+
+                    <li class="collection-item no-padding">
+                        <span class="grey-text">{{lang.PEOP_GENDER}}</span>
+                        <p class="listmg">{{row.gender}}</p>
+                    </li>
+
+                    <li class="collection-item no-padding">
+                        <span class="grey-text">{{lang.PEOP_DATE_REGISTERED}}</span>
+                        <p class="listmg">{{row.date_registered}}</p>
+                    </li>
+
+                    <li class="collection-item no-padding">
+                        <span class="grey-text">{{lang.PEOP_PICTURE}}</span>
+                        <p class="listmg">{{row.picture}}</p>
+                    </li>
+
+                    <li class="collection-item no-padding">
+                        <span class="grey-text">{{lang.PEOP_OTHERS}}</span>
+                        <p class="listmg">{{row.others}}</p>
+                    </li>
+
+                    {% if row.picture %}
+                    <div class="col s12 m3 l2 row  card-panel center">
+                        <div class="center">
+                            <img src="{{ base_url() }}/templates/uploads/main/{{row.picture}}" class=" materialboxed"  data-caption="" style="height: 120px;">
+                        </div>
+                    </div>
+                    {% endif %} </ul>
+
+            </div>
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}
+        

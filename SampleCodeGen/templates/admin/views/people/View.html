@@ -1,0 +1,37 @@
+{% extends 'admin/views/layout.html' %}
+{% block content %}
+<main class="hts-body">
+    <div class="row">
+        <div id="admin" class="col s12">
+            <div class="card material-table">
+                <div class="table-header">
+                    <span class="blue-grey-text caption">{{page.ptitle}}</span>
+                    <div class="actions">
+                        <a href="{{page.addURL}}" class="modal-trigger waves-effect btn-flat nopadding"><i class="material-icons">add</i></a>
+                        <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
+                        <a class="dropdown-button waves-effect waves-dark grey-text margin8" href="#" data-activates="htsExport"><i class="material-icons">more_vert</i></a>
+                        <ul id="htsExport" class="dropdown-content">
+                            <li><a href="{{page.exportURL}}?p=pdf" class="blue-text waves-effect">{{lang.HTS_PDF}}</a></li>
+                            <li><a href="{{page.exportURL}}?p=csv" class="blue-text waves-effect">{{lang.HTS_CSV}}</a></li>
+                            <li><a href="{{page.exportURL}}?p=excel" class="blue-text waves-effect">{{lang.HTS_EXCEL}}</a></li>
+                            <li><a href="{{page.exportURL}}?p=json" target="_blank" class="blue-text waves-effect">{{lang.HTS_JSON}}</a></li>
+                            <li><a href="{{page.exportURL}}?p=printer" target="_blank" class="blue-text waves-effect">{{lang.HTS_PRINT}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <table id="datatable">
+                    <thead>
+                    <tr>
+                        {% for value in fieldLabels %}
+                        <th>{{ value|raw }}</th>
+                        {% endfor %}
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+        

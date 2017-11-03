@@ -1,0 +1,11 @@
+{
+	"HTS_SYSTEM_LANGUAGE"			: "======Generated language file======",
+
+	"HTS_PEOPLE"					: "People",
+	"PEOP_ID"						: "Id",
+	"PEOP_NAME"						: "Name",
+	"PEOP_GENDER"					: "Gender",
+	"PEOP_DATE_REGISTERED"			: "Date registered",
+	"PEOP_PICTURE"					: "Picture",
+	"PEOP_OTHERS"					: "Others"
+}

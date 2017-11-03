@@ -1,0 +1,95 @@
+{% extends 'admin/views/layout.html' %}
+{% block content %}
+<main class="hts-body">
+    <div class="row">
+        <section>
+            <form action="{{ page.proURL }}" method="post" name="hezecomform" id="hezecomform" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col s12 m12">
+                        <nav class="white lighten-1 app-section">
+                            <div class="nav-wrapper">
+                                <div class="left col s12 m5 l5">
+                                    <ul>
+                                        <li><a href="{{ page.viewURL }}"><i class="material-icons blue-grey-text">menu</i></a></li>
+                                        <li class="blue-grey-text caption">{{lang.HTS_ADD}} {{lang.HTS_PEOPLE}}</li>
+                                    </ul>
+                                </div>
+
+                                <div class="col s12 m7 l7">
+                                    <ul class="right hide-on-small-only">
+                                        <li><a href="{{ page.addURL }}"><i class="material-icons blue-grey-text">add</i></a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </nav>
+
+                        <div class="card-panel no-padding" style="margin-top:0px">
+                            <div class="row">
+                                <div class="col s12">
+
+                                    <div class="row"><div class="output"></div></div>
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="name" name="name" type="text" maxlength="50"  value="" />
+                                            <label for="name">{{lang.PEOP_NAME}}</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+
+                                            <p>{{lang.PEOP_GENDER}}</p><select name="gender" id="gender">
+                                            <option value=""></option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+
+                                            <p>{{lang.PEOP_DATE_REGISTERED}}</p><input name="date_registered" type="text" class="datepicker" value="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="file-field input-field">
+                                        <div class="btn cyan">
+                                            <span>{{lang.HTS_UPLOAD_FILE}} </span>
+                                            <input type="file" name="picture">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+
+                                            <p>{{lang.PEOP_OTHERS}}</p><textarea rows="5" id="others" name="others" class="hts-editor " /></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field ">
+                                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action">
+                                                {{lang.HTS_SUBMIT}}<i class="material-icons left">done</i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</main>
+{% endblock %}
+        
+	
